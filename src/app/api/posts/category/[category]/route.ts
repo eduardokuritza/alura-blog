@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSearchParam, applySearchParam, fetchAllPostsAndFilter } from "@/lib/postsUtils";
+import { getSearchParam, fetchAllPostsAndFilter, applySearchParam } from "@/utils/handleParams";
+import { categories } from "@/mock/categories";
 
 const baseURL = "https://nextjs-alura-teste.vercel.app/api";
-
-const validCategories = ["mobile", "programacao", "frontend", "devops", "ux-design", "data-science", "inovacao-gestao"];
 
 export async function GET(request: NextRequest, { params }: { params: Promise<{ category: string }> }) {
   try {
@@ -20,9 +19,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       return NextResponse.json(data);
     }
 
-    if (!validCategories.includes(category)) {
+    if (!categories.map((item) => item.value).includes(category)) {
       return NextResponse.json(
-        { error: `Categoria '${category}' não encontrada. Categorias válidas: ${validCategories.join(", ")}` },
+        {
+          error: `Categoria '${category}' não encontrada. Categorias válidas: ${categories
+            .map((item) => item.value)
+            .join(", ")}`
+        },
         { status: 404 }
       );
     }

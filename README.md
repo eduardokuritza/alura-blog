@@ -23,7 +23,7 @@ Pré-requisitos: Node 18+ e pnpm/yarn/npm.
 Build de produção:
 
 ```bash
-yarn build && yarn run dev
+yarn build && yarn start
 ```
 
 ## ✅ Stack e Principais Decisões
