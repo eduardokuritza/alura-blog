@@ -2,7 +2,8 @@
 
 Aplicação desenvolvida como parte do case técnico da Alura. O objetivo foi criar uma listagem de postagens com página de detalhes, seguindo fielmente o design no [Figma](https://www.figma.com/design/MOdixi2zYNtxwNyok05D6W/Desafio-NextJS), consumindo uma API fake e aplicando boas práticas de **SEO**, **acessibilidade**, **performance** e **componentização**.
 
-> :bulb: **Tip:** Veja como o Google avaliou a aplicação no PageSpeed Insights: [**Clique aqui para o relatório**](https://pagespeed.web.dev/analysis/https-alura-blog-vercel-app/glhkr8rcdh?form_factor=desktop).
+> 🚀 **Deploy na Vercel:** [https://alura-blog.vercel.app/](https://alura-blog.vercel.app/)
+> 📊 **PageSpeed Insights:** Veja como o Google avaliou a aplicação → [**Relatório completo aqui**](https://pagespeed.web.dev/analysis/https-alura-blog-vercel-app/glhkr8rcdh?form_factor=desktop)
 
 ## ▶️ Como rodar localmente
 
