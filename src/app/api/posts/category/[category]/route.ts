@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getSearchParam, fetchAllPostsAndFilter, applySearchParam } from "@/utils/handleParams";
+import { getSearchParam, fetchAllPostsAndFilter, applySearchParam } from "@/lib/handleParams";
 import { categories } from "@/mock/categories";
 
 const baseURL = "https://nextjs-alura-teste.vercel.app/api";
