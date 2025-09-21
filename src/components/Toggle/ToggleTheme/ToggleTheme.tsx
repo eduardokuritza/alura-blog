@@ -15,7 +15,7 @@ export function ToggleTheme() {
     <button
       type="button"
       onClick={() => setTheme(next)}
-      className="h-12 w-12 cursor-pointer rounded-full border-[1.5px] border-solid border-gray-100 text-2xl hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 dark:hover:bg-red-800"
+      className="h-12 w-12 cursor-pointer rounded-full border-[1.5px] border-solid border-gray-100 text-2xl hover:bg-primary-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 "
       aria-pressed={current === "dark"}
       aria-label="Alternar tema"
     >

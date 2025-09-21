@@ -11,6 +11,13 @@ interface PostProps {
 const Post: FC<PostProps> = ({ post }) => {
   return (
     <section className="relative flex flex-col items-center w-full pb-[24px] gap-[32px]  sm:gap-[64px] pt-[48px] xl:pt-[104px] px-[16px] md:px-[72px] xl:px-[124px]">
+      <Image
+        className="absolute inset-0 z-[-1] object-cover overflow-visible pointer-events-none opacity-70"
+        src="/images/radial-bg.svg"
+        alt=""
+        aria-hidden="true"
+        fill
+      />
       <div className="flex w-full justify-center gap-[16px] sm:gap-[24px] flex-col-reverse md:flex-row">
         <div className="flex w-full flex-col gap-[16px] sm:gap-[24px]">
           <h1 className="font-chakra text-primary-300 font-bold text-4xl sm:text-5xl text-balance">{post?.title}</h1>

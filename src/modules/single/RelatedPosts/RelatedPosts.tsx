@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { PostsListResponse } from "@/@types/posts";
+import Image from "next/image";
 import Card from "@/components/Card/Card";
 
 interface RelatedPostsProps {
@@ -9,6 +10,13 @@ interface RelatedPostsProps {
 const RelatedPosts: FC<RelatedPostsProps> = ({ relatedPosts }) => {
   return (
     <section className="relative flex flex-col items-center w-full pt-[24px] gap-[32px] sm:gap-[40px] px-[16px] md:px-[72px] xl:px-[124px]">
+      <Image
+        className="absolute inset-0 z-[-1] object-cover overflow-visible pointer-events-none opacity-70"
+        src="/images/radial-bg.svg"
+        alt=""
+        aria-hidden="true"
+        fill
+      />
       <h2 className="font-chakra text-primary-300 text-2xl font-bold text-nowrap w-full">Postagens relacionadas</h2>
       <div className="grid w-full grid-cols-1 gap-[24px]  lg:grid-cols-3">
         {!!relatedPosts?.posts.length ? (

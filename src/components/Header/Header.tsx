@@ -6,7 +6,7 @@ import ButtonLink from "../Buttons/ButtonLink";
 
 const Header: FC = () => {
   return (
-    <header className="relative flex w-full max-w-[1440px] items-center justify-between gap-[40px] px-[16px] pt-[16px] md:px-[72px] md:pt-[72px] xl:px-[124px] xl:pt-[72px]">
+    <header className="relative flex w-full max-w-[1440px] items-center justify-between gap-[40px] px-[16px] pt-[16px] md:px-[72px] md:pt-[72px] xl:px-[124px] xl:pt-[72px] ">
       <div className="flex items-center gap-[12px] md:gap-[20px]">
         <Link
           href="/"

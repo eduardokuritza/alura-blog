@@ -28,8 +28,14 @@ const Single: FC<SingleProps> = ({ category, id }) => {
       tabIndex={-1}
       className="relative flex w-full max-w-[1440px] flex-col items-center focus:outline-none"
     >
-      <Post post={(data as { post: IPost })?.post} />
-      <RelatedPosts {...{ relatedPosts }} />
+      {isLoadingPost || isLoadingRelatedPosts ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          <Post post={(data as { post: IPost })?.post} />
+          <RelatedPosts {...{ relatedPosts }} />
+        </>
+      )}
     </main>
   );
 };

@@ -3,7 +3,14 @@ import Image from "next/image";
 
 const Cover: FC = () => {
   return (
-    <section id="introducao" className="relative flex justify-center w-full px-[16px] md:px-[72px] xl:px-[124px]">
+    <section id="introducao" className="relative flex justify-center w-full px-[16px] md:px-[72px] xl:px-[124px] ">
+      <Image
+        className="absolute inset-0 z-[-1] object-cover overflow-visible pointer-events-none"
+        src="/images/radial-bg.svg"
+        alt=""
+        aria-hidden="true"
+        fill
+      />
       <div className=" relative flex w-full max-w-[686px]  flex-col items-center gap-[54px] pt-[42px] pb-[42px] sm:gap-[108px] sm:pt-[68px] ">
         <div className="relative flex w-full flex-col items-center gap-[24px]">
           <div className="border-primary aspect-square h-auto w-full max-w-[224px] overflow-hidden rounded-full border-[2px]">

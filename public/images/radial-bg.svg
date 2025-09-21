@@ -1,0 +1,20 @@
+<svg width="1440" height="1063" viewBox="0 0 1440 1063" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.6">
+<g filter="url(#filter0_f_2030_19)">
+<ellipse cx="1060.32" cy="263.219" rx="336.684" ry="258.219" fill="#C1BCFF" fill-opacity="0.2"/>
+<ellipse cx="293.5" cy="323" rx="251.5" ry="193" fill="#C1BCFF" fill-opacity="0.3"/>
+<ellipse cx="536.073" cy="387.876" rx="262.073" ry="200.876" fill="#FFD9DD" fill-opacity="0.3"/>
+<ellipse cx="607.985" cy="330.411" rx="262.073" ry="200.876" fill="#DEB5FF" fill-opacity="0.3"/>
+<path d="M914.013 595.501C914.013 696.533 807.118 778.436 675.256 778.436C543.395 778.436 436.5 696.533 436.5 595.501C436.5 494.469 543.395 412.566 675.256 412.566C807.118 412.566 914.013 494.469 914.013 595.501Z" fill="#DB73FF" fill-opacity="0.3"/>
+<ellipse cx="1061.04" cy="395.497" rx="244" ry="187" fill="#6CDCFF" fill-opacity="0.2"/>
+<ellipse cx="280.626" cy="350.819" rx="86.7358" ry="44.6783" fill="#FFDA58"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_2030_19" x="-241.591" y="-278.591" width="1922.18" height="1340.62" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="141.795" result="effect1_foregroundBlur_2030_19"/>
+</filter>
+</defs>
+</svg>
