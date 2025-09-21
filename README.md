@@ -1,26 +1,28 @@
 # Alura Blog — Case Técnico (Frontend | Next.js)
 
-Aplicação desenvolvida para o case técnico da Alura. O objetivo foi construir uma listagem de postagens com página de detalhes, seguindo o design do Figma, consumindo a API fake e aplicando boas práticas de SEO, acessibilidade, performance e componentização.
+Aplicação desenvolvida como parte do case técnico da Alura. O objetivo foi criar uma listagem de postagens com página de detalhes, seguindo fielmente o design no [Figma](https://www.figma.com/design/MOdixi2zYNtxwNyok05D6W/Desafio-NextJS), consumindo uma API fake e aplicando boas práticas de **SEO**, **acessibilidade**, **performance** e **componentização**.
+
+> :bulb: **Tip:** Veja como o Google avaliou a aplicação no PageSpeed Insights: [**Clique aqui para o relatório**](https://pagespeed.web.dev/analysis/https-alura-blog-vercel-app/glhkr8rcdh?form_factor=desktop).
 
 ## ▶️ Como rodar localmente
 
-Pré-requisitos: Node 18+ e pnpm/yarn/npm.
+**Pré-requisitos:** Node.js 18+ e gerenciador de pacotes (pnpm, yarn ou npm).
 
-1. Instale dependências
+1. Instale as dependências:
 
    ```bash
    yarn
    ```
 
-2. Execute em desenvolvimento
+2. Inicie o servidor em modo desenvolvimento:
 
    ```bash
-   yarn run dev
+   yarn dev
    ```
 
-3. Acesse: http://localhost:3000
+3. Acesse no navegador: [http://localhost:3000](http://localhost:3000)
 
-Build de produção:
+### Build de produção
 
 ```bash
 yarn build && yarn start
@@ -28,22 +30,22 @@ yarn build && yarn start
 
 ## ✅ Stack e Principais Decisões
 
-- Next.js 15 (App Router) + Turbopack
-- TypeScript com tipagem segura (tipos em `src/@types`)
-- Tailwind CSS v4 (config sob `tailwind.config.ts` e tokens via CSS vars)
-- React Query (TanStack) para cache, revalidação e estados de requisição
-- next-themes para Dark/Light mode (preferência do sistema e toggle manual)
-- Sass para utilidades globais e theming complementar
+- **Next.js 15** (App Router) + Turbopack  
+- **TypeScript** com tipagem segura (`src/@types`)  
+- **Tailwind CSS v4** (configuração em `tailwind.config.ts` e tokens via CSS vars)  
+- **React Query (TanStack)** para cache, revalidação e gerenciamento de estado de requisições  
+- **next-themes** para modo claro/escuro (detecção do sistema + toggle manual)  
+- **Sass** para utilidades globais e theming complementar
 
 ## 🎯 Requisitos do Case — Como foram atendidos
 
-- Utilizar Next.js 15 com App Router: OK (estrutura em `src/app`)
-- TypeScript com tipagem segura: OK (`src/@types/posts.d.ts` e uso estrito)
-- Tailwind 4 para estilização: OK (v4.1.x)
-- Consumir API fake: OK (axios + baseURL, endpoints mapeados)
-- Boas práticas de SEO: OK (metadata, lang, viewport, ícones, fonte otimizada)
-- Boas práticas de Acessibilidade: OK (nav com aria-label, foco visível, botões semanticamente corretos, imagens com alt)
-- Fidelidade ao Figma: Layout implementado e responsivo
-- Layout 100% responsivo: Grid e utilitários responsivos
-- Performance e carregamento rápido: Turbopack, cache do React Query, componentes leves
-- Diferencial: Tema claro/escuro implementado
+- **Next.js 15 com App Router**: ✅ Estrutura em `src/app`  
+- **TypeScript com tipagem segura**: ✅ (`src/@types/posts.d.ts` e uso estrito)  
+- **Tailwind 4 para estilização**: ✅ (v4.1.x)  
+- **Consumir API fake**: ✅ (axios + baseURL, endpoints mapeados)  
+- **SEO**: ✅ metadata, lang, viewport, ícones e fonte otimizada  
+- **Acessibilidade**: ✅ navegação com aria-label, foco visível, botões semânticos, imagens com alt  
+- **Fidelidade ao Figma**: ✅ layout implementado e responsivo  
+- **Responsividade total**: ✅ grid e utilitários responsivos  
+- **Performance**: ✅ Turbopack, cache do React Query, componentes leves  
+- **Diferencial**: ✅ tema claro/escuro implementado
