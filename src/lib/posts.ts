@@ -8,17 +8,20 @@ export async function getPosts({ queryKey }: any) {
       page: number;
       limit: number;
       category?: string;
-      tag?: string;
+
       search?: string;
     }
   ];
   const page = filter?.page ?? 1;
   const limit = filter?.limit ?? 9;
 
-  const path = filter?.category ? `/category/${filter.category}` : filter?.tag ? `/tag/${filter.tag}` : "";
+  const path = filter?.category ? `/category/${filter.category}` : "";
 
   try {
-    const { data } = await api.get(path, prepareParams({ page, limit }));
+    const { data } = await api.get(
+      path,
+      prepareParams({ page, limit, ...(filter?.search ? { search: filter.search } : {}) })
+    );
     return data as PostsListResponse;
   } catch (error) {
     console.error("Erro ao buscar posts:", error);

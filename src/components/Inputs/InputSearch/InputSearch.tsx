@@ -14,17 +14,22 @@ const InputSearch: FC<InputSearchProps> = ({ category, ...props }) => {
   const [inputSearch, setInputSearch] = useState(search || "");
 
   const push = (searcher = inputSearch) => {
-    router.push(
-      searcher ? `/${category ? `/${category}?` : "?"}?search=${searcher}` : `/${category ? `${category}` : ""}`
-    );
+    const base = category ? `/${category}` : "/";
+    const trimmed = (searcher || "").trim();
+    const url = trimmed.length ? `${base}?search=${encodeURIComponent(trimmed)}` : base;
+    router.push(url);
   };
 
+  let debounceId: any;
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputSearch((prev) => {
-      if (prev.length < 3 && !search) return e.target.value;
-      setTimeout(() => push(e.target.value), 150);
-      return e.target.value;
-    });
+    const value = e.target.value;
+    setInputSearch(value);
+    clearTimeout(debounceId);
+    debounceId = setTimeout(() => {
+      if (value.length === 0 || value.length >= 3) {
+        push(value);
+      }
+    }, 200);
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -38,12 +43,12 @@ const InputSearch: FC<InputSearchProps> = ({ category, ...props }) => {
       <input
         className="placeholder:font-base placeholder:text-primary-300 w-full bg-transparent text-base focus:outline-none"
         placeholder="Buscar..."
-        value={inputSearch}
         onChange={handleSearch}
+        value={inputSearch}
         onKeyDown={handleKeyDown}
         {...props}
       />
-      <Image src="/icons/magnify-glass.svg" alt="Ícone de busca" width={24} height={24} />
+      <Image src="/icons/magnifying-glass.svg" alt="Buscar" width={24} height={24} />
     </div>
   );
 };
