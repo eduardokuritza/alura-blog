@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSearchParam, applySearchParam, fetchAllPostsAndFilter } from "@/lib/postsUtils";
 
 const baseURL = "https://nextjs-alura-teste.vercel.app/api";
 
@@ -11,6 +12,13 @@ export async function GET(request: NextRequest) {
     const pageNum = parseInt(page);
     const limitNum = parseInt(limit);
 
+    const search = getSearchParam(new URL(request.url));
+
+    if (search && search.length >= 3) {
+      const data = await fetchAllPostsAndFilter(`${baseURL}/posts`, search, pageNum, limitNum);
+      return NextResponse.json(data);
+    }
+
     const totalPages = Math.ceil(45 / limitNum);
     if (pageNum > totalPages) {
       return NextResponse.json(
@@ -22,6 +30,7 @@ export async function GET(request: NextRequest) {
     const upstream = new URL(`${baseURL}/posts`);
     upstream.searchParams.set("page", page);
     upstream.searchParams.set("limit", limit);
+    applySearchParam(upstream, search);
 
     const response = await fetch(upstream.toString());
 

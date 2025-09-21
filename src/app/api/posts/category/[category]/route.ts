@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSearchParam, applySearchParam, fetchAllPostsAndFilter } from "@/lib/postsUtils";
 
 const baseURL = "https://nextjs-alura-teste.vercel.app/api";
 
@@ -10,6 +11,14 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const { searchParams } = new URL(request.url);
     const page = searchParams.get("page") || "1";
     const limit = searchParams.get("limit") || "9";
+    const search = getSearchParam(new URL(request.url));
+    const pageNum = parseInt(page);
+    const limitNum = parseInt(limit);
+
+    if (search && search.length >= 3) {
+      const data = await fetchAllPostsAndFilter(`${baseURL}/posts/category/${category}`, search, pageNum, limitNum);
+      return NextResponse.json(data);
+    }
 
     if (!validCategories.includes(category)) {
       return NextResponse.json(
@@ -21,6 +30,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     const upstream = new URL(`${baseURL}/posts/category/${category}`);
     upstream.searchParams.set("page", page);
     upstream.searchParams.set("limit", limit);
+    applySearchParam(upstream, search);
 
     const response = await fetch(upstream.toString());
 

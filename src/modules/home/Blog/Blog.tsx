@@ -4,7 +4,6 @@ import { Post } from "@/@types/posts";
 import { getPosts } from "@/lib/posts";
 import { categories } from "@/mock/categories";
 import { useQuery } from "@tanstack/react-query";
-import { useSearchParams } from "next/navigation";
 import Card from "@/components/Card/Card";
 import ButtonLink from "@/components/Buttons/ButtonLink";
 import Pagination from "@/components/Pagination/Pagination";
@@ -15,9 +14,7 @@ type BlogProps = {
 };
 
 const Blog: FC<BlogProps> = ({ category }) => {
-  const params = useSearchParams();
-  const urlSearch = params.get("search") || "";
-  const [searchText, setSearchText] = useState(urlSearch);
+  const [searchText, setSearchText] = useState("");
   const [page, setPage] = useState(1);
 
   const { data: allPosts, isLoading } = useQuery({
