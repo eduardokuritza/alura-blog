@@ -4,7 +4,7 @@ import { ThemeProvider as NextThemeProvider } from "next-themes";
 
 const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <NextThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+    <NextThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
       {children}
     </NextThemeProvider>
   );
