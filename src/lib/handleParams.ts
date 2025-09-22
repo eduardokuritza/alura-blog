@@ -1,3 +1,5 @@
+import slugify from "@/utils/slugfy";
+
 export const API_BASE = "https://nextjs-alura-teste.vercel.app/api";
 
 export type PostMinimal = {
@@ -120,12 +122,13 @@ export async function getAllPostParams(): Promise<{ category: string; id: string
 
   for (const p of posts as PostMinimal[]) {
     const category = p?.category?.slug;
-    const id = p?.id;
-    if (!category || !id) continue;
-    const k = `${category}__${id}`;
+
+    const slug = slugify(p?.title || "");
+    if (!category || !slug) continue;
+    const k = `${category}__${slug}`;
     if (seen.has(k)) continue;
     seen.add(k);
-    params.push({ category, id });
+    params.push({ category, id: slug });
   }
 
   return params;
